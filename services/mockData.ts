@@ -2,8 +2,8 @@ import { Drive, Student, User, UserRole } from '../types';
 
 // Mock Users
 export const MOCK_USERS: User[] = [
-  { id: '1', name: 'Dr. Admin Sharma', email: 'admin@mmumullana.org', role: UserRole.ADMIN },
-  { id: '2', name: 'Mr. Officer Verma', email: 'officer@mmumullana.org', role: UserRole.TNP_OFFICER, department: 'CSE' },
+  { id: '1', name: 'Dr. Admin', email: 'admin@mmumullana.org', role: UserRole.ADMIN },
+  { id: '2', name: 'Dr. Dalip Kamboj', email: 'tpo@mmumullana.org', role: UserRole.TNP_OFFICER, department: 'CSE' },
   { id: '3', name: 'Coordinator Rahul', email: 'coord@mmumullana.org', role: UserRole.COORDINATOR, department: 'ECE' },
 ];
 
