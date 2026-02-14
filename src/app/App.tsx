@@ -6,6 +6,8 @@ import { Login } from '../pages/Login';
 import { Dashboard } from '../pages/Dashboard';
 import { Students } from '../pages/Students';
 import { Drives } from '../pages/Drives';
+import { About } from "../pages/About";
+
 
 // Protected Route Wrapper
 const ProtectedRoute: React.FC<{ children: React.ReactNode }> = ({ children }) => {
@@ -45,6 +47,8 @@ const AppRoutes = () => {
           </ProtectedRoute>
         }
       />
+      <Route path="/about" element={<About />} />
+      <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   );
 };

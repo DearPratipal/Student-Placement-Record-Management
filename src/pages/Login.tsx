@@ -227,4 +227,131 @@ export const Login: React.FC = () => {
       </div>
     </div>
   );
+
+{/*
+  return (
+    <div className="relative min-h-screen flex items-center justify-center overflow-hidden">
+
+      {/* 🎬 Background Video */}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute w-full h-full object-cover"
+      >
+        <source src="/campus-video.mp4" type="video/mp4" />
+      </video>
+
+      {/* 🌑 Dark Overlay */}
+      <div className="absolute inset-0 bg-black/70 backdrop-blur-sm"></div>
+
+      {/* 🔐 Login Card */}
+      <div className="relative z-10 max-w-md w-full bg-white/90 backdrop-blur-xl rounded-2xl shadow-2xl overflow-hidden border border-white/30">
+
+        {/* 🔴 Header */}
+        <div className="bg-mmdu-red px-8 py-8 text-center relative">
+
+          {/* Logo */}
+          <div className="flex justify-center mb-4">
+            <img
+              src="/logo-mmdu.svg"
+              alt="MMDU Logo"
+              className="w-20 h-20 object-contain hover:scale-110 transition-transform duration-300 drop-shadow-lg"
+            />
+          </div>
+
+          {/* Glowing Title */}
+          <h2 className="text-2xl font-bold text-white animate-pulse drop-shadow-[0_0_10px_rgba(255,255,255,0.9)]">
+            MM(DU)
+          </h2>
+
+          <p className="text-red-100 text-sm tracking-wide">
+            Placement Record Management System
+          </p>
+        </div>
+
+        {/* 📝 Form Section */}
+        <div className="p-8">
+          <h3 className="text-xl font-semibold text-gray-800 mb-6 text-center">
+            Secure Login
+          </h3>
+
+          {error && (
+            <div className="mb-4 bg-red-50 border-l-4 border-red-500 p-4 flex items-center gap-3 rounded-lg">
+              <AlertCircle className="text-red-500 w-5 h-5" />
+              <p className="text-sm text-red-700">{error}</p>
+            </div>
+          )}
+
+          <form onSubmit={handleSubmit} className="space-y-6">
+
+            {/* Email */}
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-2">
+                Email Address
+              </label>
+              <div className="relative">
+                <Mail className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 w-5 h-5" />
+                <input
+                  type="email"
+                  required
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 transition-all outline-none bg-white/80"
+                  placeholder="username@mmumullana.org"
+                />
+              </div>
+            </div>
+
+            {/* Password */}
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-2">
+                Password
+              </label>
+              <div className="relative">
+                <Lock className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 w-5 h-5" />
+                <input
+                  type="password"
+                  required
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 transition-all outline-none bg-white/80"
+                  placeholder="••••••••"
+                />
+              </div>
+            </div>
+
+            {/* Button */}
+            <button
+              type="submit"
+              disabled={isSubmitting}
+              className={`w-full py-3 px-4 rounded-lg text-white font-medium shadow-lg transition-all duration-300
+            ${isSubmitting
+                  ? 'bg-red-400 cursor-not-allowed'
+                  : 'bg-mmdu-red hover:bg-mmdu-dark hover:shadow-2xl hover:scale-[1.02] active:scale-95'
+                }`}
+            >
+              {isSubmitting ? 'Authenticating...' : 'Access Dashboard'}
+            </button>
+
+          </form>
+
+          <div className="mt-6 text-center text-sm text-gray-200 bg-black/30 py-2 rounded-lg backdrop-blur-md">
+            Need access?{" "}
+            <span className="text-white font-medium hover:underline cursor-pointer">
+              Contact TNP Administrator
+            </span>
+          </div>
+        </div>
+
+      </div>
+
+      {/* 🌫 Footer Blur Strip */}
+      <div className="absolute bottom-0 w-full py-3 text-center text-xs text-gray-300 bg-black/50 backdrop-blur-md">
+        © 2026 MM(DU) Placement Portal | All Rights Reserved
+      </div>
+
+    // </div>
+  // );
 };

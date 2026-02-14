@@ -72,10 +72,18 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
       </header>
 
       <div className="flex flex-1 overflow-hidden">
+        {/* Mobile Overlay */}
+        {isSidebarOpen && (
+          <div
+            className="fixed inset-0 bg-black/40 z-30 lg:hidden"
+            onClick={() => setIsSidebarOpen(false)}
+          ></div>
+        )}
+        
         {/* Sidebar */}
         <aside
           className={`
-            fixed lg:static inset-y-0 left-0 z-10
+            fixed lg:static inset-y-0 left-0 z-40 
             w-64 bg-white border-r border-gray-200 transform transition-transform duration-200 ease-in-out
             ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}
             lg:block flex flex-col justify-between pb-6 pt-4
@@ -85,6 +93,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
             <NavItem to="/" icon={LayoutDashboard} label="Dashboard" />
             <NavItem to="/students" icon={Users} label="Student Records" />
             <NavItem to="/drives" icon={Briefcase} label="Placement Drives" />
+            <NavItem to="/about" icon={GraduationCap} label="About System" />
           </nav>
 
           <div className="px-3">
@@ -108,11 +117,17 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
           <footer className="mt-8 border-t border-gray-200 pt-6 pb-8 text-center text-gray-500 text-sm">
             <p className="font-medium text-gray-700">Maharishi Markandeshwar (Deemed to be University)</p>
             <div className="mt-2 space-x-4">
-              <a href="#" className="hover:text-mmdu-red transition-colors">Terms & Conditions</a>
+              <Link to="/about" className="hover:text-mmdu-red transition-colors">
+                Terms & Conditions
+              </Link>
               <span>|</span>
-              <a href="#" className="hover:text-mmdu-red transition-colors">About</a>
+              <Link to="/about" className="hover:text-mmdu-red transition-colors">
+                About
+              </Link>
               <span>|</span>
-              <a href="#" className="hover:text-mmdu-red transition-colors">Contact Support</a>
+              <a href="#" className="hover:text-mmdu-red transition-colors">
+                Contact Support
+              </a>
             </div>
             <p className="mt-4 text-xs">
               © 2026 | All Rights Reserved | MMDU Placement Cell & Developers Student
