@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import { useAuth } from '../context/AuthContext';
 import { useNavigate } from 'react-router-dom';
-import { GraduationCap, Lock, Mail, AlertCircle } from 'lucide-react';
+import { GraduationCap, Lock, Mail, AlertCircle, Eye, EyeOff} from 'lucide-react';
 
 export const Login: React.FC = () => {
-  const [email, setEmail] = useState('admin@mmumullana.org'); // Pre-fill for demo
-  const [password, setPassword] = useState('password');
+  const [email, setEmail] = useState(''); 
+  const [password, setPassword] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { login } = useAuth();
@@ -188,6 +189,7 @@ export const Login: React.FC = () => {
               <label className="block text-sm font-medium text-gray-700 mb-2">
                 Password
               </label>
+              {/*}
               <div className="relative">
                 <Lock className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 w-5 h-5" />
                 <input
@@ -198,6 +200,28 @@ export const Login: React.FC = () => {
                   className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 transition-all outline-none"
                   placeholder="••••••••"
                 />
+              </div>
+              */}
+              <div className="relative">
+                <Lock className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 w-5 h-5" />
+
+                <input
+                  type={showPassword ? "text" : "password"}
+                  required
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  className="w-full pl-10 pr-12 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 transition-all outline-none"
+                  placeholder="••••••••"
+                />
+
+                {/* 👁 Eye Button */}
+                <button
+                  type="button"
+                  onClick={() => setShowPassword(!showPassword)}
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-mmdu-red transition"
+                >
+                  {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
+                </button>
               </div>
             </div>
 
