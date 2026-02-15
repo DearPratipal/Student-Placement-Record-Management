@@ -140,8 +140,13 @@ export const Login: React.FC = () => {
           <div className="flex justify-center mb-4">
             <img
               src="/mmdu-logo.png"
+              // src="/mmdu-logo-black.png"
+              // src="/mmdu-logo-white.png"
+              // src="/mmdu-logo-red-white.png"
               alt="MMDU Logo"
-              className="w-20 h-20 object-contain hover:scale-110 transition-transform duration-300"
+              // Add Shadow
+              // className="w-30 h-20 object-contain hover:scale-110 transition-transform duration-300 drop-shadow-lg"
+              className="w-30 h-20 object-contain hover:scale-110 transition-transform duration-300"
             />
           </div>
 
